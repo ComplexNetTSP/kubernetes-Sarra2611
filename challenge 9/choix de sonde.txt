@@ -1,0 +1,16 @@
+Choix des sondes pour chaque application
+1. Application Flask (webdb)
+
+    Type de sonde : HTTP liveness probe.
+    Pourquoi ?
+        L'application expose un serveur HTTP, ce qui permet de vérifier directement si elle répond correctement via une requête sur le chemin /liveness.
+        Une sonde HTTP est idéale pour les services web, car elle peut tester la logique métier et pas seulement la connectivité.
+  
+
+2. MongoDB
+
+    Type de sonde : TCP liveness probe.
+    Pourquoi ?
+        MongoDB n'a pas d'endpoint HTTP par défaut. Une sonde TCP est simple et efficace pour vérifier que le service écoute toujours sur le port 27017.
+        Ce test valide uniquement que le service est actif, ce qui est suffisant pour une base de données.
+    
