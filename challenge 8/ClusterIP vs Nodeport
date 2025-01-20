@@ -1,0 +1,10 @@
+ClusterIP
+
+    Définition : Service par défaut dans Kubernetes, accessible uniquement depuis l'intérieur du cluster.
+    Usage : Permet aux Pods de communiquer entre eux (par exemple, une application web qui interagit avec une base de données).
+
+
+NodePort
+
+    Définition : Service qui expose un port sur chaque nœud du cluster, permettant l'accès depuis l'extérieur du cluster.
+    Usage : Utilisé pour déboguer ou permettre un accès simple à une application sans utiliser un LoadBalancer.
