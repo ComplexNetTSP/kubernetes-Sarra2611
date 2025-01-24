@@ -1,0 +1,17 @@
+StatefulSets:
+    - Un StatefulSet est un objet Kubernetes utilisé pour déployer des applications stateful, telles que des bases de données.
+    -     Caractéristiques principales :
+                -Les Pods ont des identités uniques et stables, avec des noms comme mongodb-0, mongodb-1, etc.
+                -Ils conservent leur identité (nom, réseau, volume persistant) même après suppression et recréation.
+                -Chaque Pod peut avoir son propre Persistent Volume associé.
+
+    -Quand utiliser un StatefulSet ?
+                -Pour des applications nécessitant un stockage persistant, comme MongoDB.
+                -Pour des applications qui doivent conserver leur identité réseau ou stockage (par exemple, des clusters de bases de données ou des applications distribuées).
+
+
+Qu'est-ce qu'un Service Headless ?
+
+    -Un Headless Service est un Service Kubernetes sans adresse IP propre.
+    -Il permet aux Pods d’être accessibles individuellement par leurs noms DNS.
+    -Avec un StatefulSet et un Service Headless, chaque Pod aura un DNS unique comme mongodb-0.mongodb-service.sbarnoussi.svc.cluster.local.
