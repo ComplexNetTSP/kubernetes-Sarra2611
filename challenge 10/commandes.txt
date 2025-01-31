@@ -1,0 +1,8 @@
+kubectl apply -f webnodb-service.yaml
+kubectl apply -f webdb-service.yaml
+kubectl apply -f ingress.yaml
+
+on peut tester l'ingress en accèdant aux URLs suivants:
+    -     http://webnodb.sbarnoussi.net4255.luxbulb.org/
+    -     http://webdb.sbarnoussi.net4255.luxbulb.org/
+
