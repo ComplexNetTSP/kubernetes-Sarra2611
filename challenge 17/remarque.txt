@@ -1,0 +1,1 @@
+On n'a pas le droit d'executer des jobs dans notre namespace, donc je n'ai pas testé ce challenge.

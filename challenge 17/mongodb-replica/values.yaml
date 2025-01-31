@@ -1,0 +1,24 @@
+replicaCount: 3  
+
+image:
+  repository: mongo
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  name: mongodb-service
+  port: 27017
+
+persistence:
+  enabled: true
+  storageClass: "standard"
+  accessMode: ReadWriteOnce
+  size: 1Gi
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 250m
+    memory: 256Mi
