@@ -1,0 +1,7 @@
+kubectl create deployment webnodb --image=bellator2611/flask-docker-app:latest --namespace=sbarnoussi
+kubectl get deployments -o wide --namespace=sbarnoussi
+kubectl get pods -o wide --namespace=sbarnoussi
+kubectl port-forward pod/<pod-id>> 54127:5000 --namespace=sbarnoussi
+puis on accède à http://127.0.0.1:54127
+
+

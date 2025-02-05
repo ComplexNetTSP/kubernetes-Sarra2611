@@ -1,0 +1,17 @@
+kubectl apply -f deployment.yaml
+kubectl apply -f hpa.yaml
+
+
+Puis, afin de tester l'HPA, on va générer une charge CPU sur les pods:
+On accède d'abord au terminal de l'un des pods:
+    kubectl exec -it webnodb-78c49b7766-tpl8s -n sbarnoussi -- bash
+
+On installe stress dans le conteneur:
+    apt-get update && apt-get install -y stress
+    
+On exécute stress pour générer une charge:
+    stress --cpu 2 --timeout 30s
+
+
+Une fois qu'on a une charge CPU sur le Pod, on vérifie l'état de l'HPA pour voir s'il ajuste le nombre de répliques:
+    kubectl get hpa -n sbarnoussi

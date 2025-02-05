@@ -1,0 +1,5 @@
+kubectl apply -f webnodb-deployment.yaml
+
+Puis pour tester:
+    kubectl proxy
+    on peut accèder http://127.0.0.1:8001/api/v1/namespaces/azribi/services/webnodb-service/proxy/

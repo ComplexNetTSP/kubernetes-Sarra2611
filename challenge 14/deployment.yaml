@@ -4,7 +4,7 @@ metadata:
   name: webnodb
   namespace: sbarnoussi
 spec:
-  replicas: 1  # Initialement, un seul Pod
+  replicas: 1 
   selector:
     matchLabels:
       app: webnodb
@@ -18,10 +18,10 @@ spec:
         image: bellator2611/flask-docker-app:v2
         resources:
           requests:
-            cpu: "100m"  # 100 milliCPU (1/10 d'un CPU)
+            cpu: "100m"  
             memory: "200Mi"
           limits:
-            cpu: "500m"  # Limite à 50% d'un CPU complet
+            cpu: "500m"  
             memory: "500Mi"
         ports:
         - containerPort: 80

@@ -1,0 +1,27 @@
+kubectl apply -f network-policy.yaml
+
+Pour tester l’accès autorisé
+
+    - Depuis un Pod Web (webdb):
+
+        kubectl exec -it <webdb-pod-name> -n sbarnoussi -- bash
+
+À l’intérieur du Pod, on utilise un outil comme telnet pour vérifier la connexion :
+
+        apt update && apt install -y telnet
+        telnet mongodb 27017
+
+--> accès autorisé 
+
+Tester l’accès bloqué
+
+    on crée un Pod temporaire non autorisé et on tente d’accéder à MongoDB.
+
+        kubectl run test-pod --image=alpine --restart=Never --namespace=sbarnoussi -- sleep 3600
+        kubectl exec -it test-pod -n sbarnoussi -- sh
+
+À l’intérieur du Pod, on tente de se connecter à MongoDB :
+
+        telnet mongodb 27017
+
+---> accès refusé

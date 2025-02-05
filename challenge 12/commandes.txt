@@ -1,0 +1,4 @@
+helm install challenge12 ./challenge12 -n sbarnoussi
+
+pour vérifier que le statefulset a été crée:
+    kubectl get statefulset -n sbarnoussi

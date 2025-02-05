@@ -1,0 +1,7 @@
+kubectl apply -f webdb-deployment.yaml
+kubectl apply -f mongodb-deployment.yaml
+
+
+Pour tester avec KubeProxy:
+    kubectl proxy
+    puis on va sur http://127.0.0.1:8001/api/v1/namespaces/sbarnoussi/services/webdb-service/proxy/

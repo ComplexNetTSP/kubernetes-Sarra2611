@@ -1,0 +1,8 @@
+j'ai ajouté le chemin /liveliness donc on va mettre à jour l'image:
+    docker-compose up --build -d
+    docker tag flask-server-app bellator2611/flask-docker-app:v3
+    docker login
+    docker push bellator2611/flask-docker-app:v3
+
+kubectl apply -f webdb-deployment.yaml
+kubectl apply -f mongodb-deployment.yaml

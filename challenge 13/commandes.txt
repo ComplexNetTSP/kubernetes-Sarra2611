@@ -1,0 +1,7 @@
+docker build -t bellator2611/flask-app:v4 ./webdb
+docker build -t bellator2611/flask-docker-app:v2 ./webnodb
+docker push bellator2611/flask-app:v4
+docker push bellator2611/flask-docker-app:v2
+helm upgrade challenge12 ./challenge13 -n sbarnoussi
+kubectl rollout status deployment/webdb -n sbarnoussi
+kubectl rollout status deployment/webnodb -n sbarnoussi

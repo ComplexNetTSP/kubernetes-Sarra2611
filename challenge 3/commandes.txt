@@ -1,0 +1,4 @@
+docker-compose up --build -d
+curl http://localhost:5000
+docker tag flask-server-app:latest bellator2611/flask-app:v2
+docker push bellator2611/flask-app:v2

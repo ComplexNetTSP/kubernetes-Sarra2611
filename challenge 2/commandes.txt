@@ -1,0 +1,10 @@
+docker compose up -d
+docker exec -it mongodb mongosh
+
+Dans le shell de mongosh: 
+    use admin
+    db.auth("admin", "password")
+    use mydatabase
+    db.mycollection.insertOne({ name: "Sarra Barnoussi", age: 23})
+    db.mycollection.find()
+    exit
